@@ -1,0 +1,256 @@
+\documentclass[12pt,reqno, twoside]{amsbook}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{chngcntr}
+\usepackage{graphicx}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[portuges]{babel}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+% pode ter de retirar em baixo a diretiva de commentario quando usar figuras em formato eps
+%\usepackage{epstopdf}
+
+
+\makeatletter
+    \def\section{\@startsection{section}{1}%
+      \z@{.5\linespacing\@plus.7\linespacing}{.25\linespacing}%
+      {\normalfont\bfseries\flushleft}}
+    \def\subsection{\@startsection{subsection}{2}%
+      \z@{.5\linespacing\@plus.7\linespacing}{.25\linespacing}%
+      {\normalfont\bfseries\flushleft}}
+
+\makeatother
+\setcounter{MaxMatrixCols}{10}
+
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+\theoremstyle{plain}
+\newtheorem{acknowledgement}{Agradecimento}
+\newtheorem{algorithm}{Algoritmo}[chapter]
+\newtheorem{axiom}{Axioma}[chapter]
+\newtheorem{case}{Caso}[chapter]
+\newtheorem{claim}{Claim}[chapter]
+\newtheorem{conclusion}{Conclus\~{a}o}[chapter]
+\newtheorem{condition}{Condi\c{c}\~{a}o}[chapter]
+\newtheorem{conjecture}{Conjetura}[chapter]
+\newtheorem{corollary}{Corol\'{a}rio}[chapter]
+\newtheorem{criterion}{Crit\'{e}rio}[chapter]
+\newtheorem{definition}{Defini\c{c}\~{a}o}[chapter]
+\newtheorem{example}{Exemplo}[chapter]
+\newtheorem{exercise}{Exerc\'{i}cio}[chapter]
+\newtheorem{lemma}{Lema}[chapter]
+\newtheorem{notation}{Nota\c{c}\~{a}o}[chapter]
+\newtheorem{problem}{Problema}[chapter]
+\newtheorem{proposition}{Proposi\c{c}\~{a}o}[chapter]
+\newtheorem{remark}{Nota}[chapter]
+\newtheorem{solution}{Solu\c{c}\~{a}o}[chapter]
+\newtheorem{summary}{Sum\'{a}rio}[chapter]
+\newtheorem{theorem}{Teorema}[chapter]
+\numberwithin{equation}{chapter}
+
+
+% Please write the references according to your school
+
+\newenvironment{dedication}
+  {%\clearpage           % we want a new page
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   %\clearpage           % finish off the page
+  }
+  \numberwithin{section}{chapter}
+\fancyhead{}
+\fancyfoot{}
+\pagestyle{fancy}
+\fancyfoot[LE,RO]{\thepage}
+
+\makeatletter
+\def\ps@plain{\ps@empty
+ \def\@evenfoot{%
+   \normalfont\scriptsize
+   \rlap{\thepage}\hfil
+   }%
+ \def\@oddfoot{%
+   \normalfont\scriptsize \hfil
+   \llap{\thepage}}%
+}
+\makeatother
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+
+\begin{document}
+\frontmatter
+\addtocontents{toc}{\setcounter{tocdepth}{2}}
+\thispagestyle{empty}
+
+\begin{dedication}%
+
+\begin{flushright}
+\textit{Escreva aqui a sua dedicat\'{o}ria}
+\end{flushright}%
+\end{dedication}
+
+\setcounter{page}{1}
+\pagenumbering{roman} %
+\chapter*{Agradecimento}
+
+Escreva aqui os agradecimentos e, caso haja, as fontes de financiamento
+
+\chapter*{Resumo}
+
+Escreva aqui o resumo em portugu\^{e}s
+
+\chapter*{Abstract}
+
+Escreva aqui o resumo em ingl\^{e}s
+
+\renewcommand{\contentsname}{\'{I}ndice}
+\tableofcontents
+
+\mainmatter
+
+\hyphenation{wri-te he-re pro-per hy-phe-ni-za-tion
+}%
+
+\setcounter{page}{1} \pagenumbering{arabic}
+
+\chapter{Introdu\c{c}\~{a}o}
+\noindent Deve usar o comando $\backslash$noindent no primeiro par\'{a}grafo de cada sec\c{c}\~{a}o e subsec\c{c}\~{a}o.
+\section{Sec\c{c}\~{a}o Maior}
+\noindent Use o comando $\backslash$section para iniciar uma sec\c{c}\~{a}o.
+\subsection{Esta \'{e} uma subsec\c{c}\~{a}o}
+\noindent Use o comando $\backslash$subsection para iniciar uma subsec\c{c}\~{a}o..
+\subsection{Esta \'{e} uma outra subsec\c{c}\~{a}o}
+\noindent \'{E} um texto sem qualquer significado.\par
+Aqui come\c{c}a o segundo par\'{a}grafo.
+\section{Outra Sec\c{c}\~{a}o Maior}
+\newpage
+Adicionamos uma p\'{a}gina para verificar que o n´\'{u}mero da  p\'{a}gina par fica do lado esquerdo.
+
+\chapter{Revis\~{a}o da Literatura}
+\section{Uma Sec\c{c}\~{a}o}
+\section{Outra Sec\c{c}\~{a}o}
+
+
+\chapter{Aspetos Matem\'{a}ticos}
+\section{Matem\'{a}tica em Texto}
+\noindent Seja $H$ um espa\c{c}o um Euclideano e $C$ um subconjunto convexo de $H$, ...
+Suponha que quando $n\rightarrow\infty$, ....
+
+\section{F\'{o}rmulas Matem\'{a}ticas}
+\noindent Exemplifica-se como as equa\c{c}\~{o}es podem ficar numeradas e como o seu n\'{u}mero pode ser invocado pela etiqueta correspodente.
+\begin{equation}
+w_{tt}-\Delta w+w^{6}+w\left|  w\right|  ^{p-2}=0\text{ in }\mathbf{R}%
+^{3}\times\left[  0,\infty\right) \label{eqn1}%
+\end{equation}
+
+A equa\c{c}\~{a}o (\ref{eqn1}) mostra que
+
+\chapter{Contextos do Tipo Teorema}
+\section{Alguns Exemplos}
+
+\begin{algorithm}
+Isto \'{e} um algoritmo.
+\end{algorithm}
+
+\begin{algorithm}
+Isto \'{e} outro algoritmo.
+\end{algorithm}
+
+\begin{conjecture}
+Isto \'{e} uma conjetura
+\end{conjecture}
+
+\begin{corollary}
+Isto \'{e} um corol\'{a}rio.
+\end{corollary}
+
+\begin{corollary}
+Isto \'{e} outro corol\'{a}rio.
+\end{corollary}
+
+\begin{corollary}
+Ainda mais um corol\'{a}rio.
+\end{corollary}
+
+\begin{criterion}
+Isto \'{e} um crit\'{e}rio.
+\end{criterion}
+
+\begin{definition}
+Isto \'{e} uma defini\c{c}\~{a}o.
+\end{definition}
+
+\begin{example}
+Isto \'{e} um exemplo.
+\end{example}
+
+\begin{exercise}
+Isto \'{e} um exerc\'{i}cio.
+\end{exercise}
+
+\begin{lemma}
+Isto \'{e} um lema.
+\end{lemma}
+
+\begin{proof}
+Isto \'{e} uma prova do lema.
+\end{proof}
+
+\begin{notation}
+Isto \'{e} uma nota\c{c}\~{a}o.
+\end{notation}
+
+\begin{problem}
+Isto \'{e} um problema.
+\end{problem}
+
+\begin{proposition}
+Isto \'{e} uma proposi\c{c}\~{a}o.
+\end{proposition}
+
+
+\begin{proof}
+[Prova do Teorema Principal] Faz-se aqui a prova .
+\end{proof}
+\chapter{Conclus\~{o}es}
+
+\renewcommand{\bibname}{Refer\^{e}ncias Bibliogr\'{a}ficas}
+
+
+\def\bibindent{0.7cm}
+\begin{thebibliography}{99\kern\bibindent}
+\makeatletter
+\let\old@biblabel\@biblabel
+\def\@biblabel#1{\old@biblabel{#1}\kern\bibindent}
+\let\old@bibitem\bibitem
+\def\bibitem#1{\old@bibitem{#1}\leavevmode\kern-\bibindent}
+\makeatother
+\makeatletter
+\renewcommand\@biblabel[1]{}
+\makeatother
+
+%\begin{thebibliography}{99}
+\bibitem{aka73} H. Akaike (1973), \textquotedblleft Information Theory as an
+Extension of the Maximum Likelihood Principle\textquotedblright, in B. N.
+Petrov, and F. Csaki, (Eds.), \textit{Second International Symposium on
+Information Theory}, Akademiai Kiado, Budapest, pp. 267--281.
+
+\bibitem{and10} D.T. Anderson, J.C. Bezdek, M. Popescu, and J.M. Keller
+(2010), \textquotedblleft Comparing Fuzzy, Probabilistic, and Possibilistic
+Partitions\textquotedblright, \textit{IEEE Transactions on Fuzzy Systems},
+18(5), 906--918.
+\end{thebibliography}
+
+\end{document}

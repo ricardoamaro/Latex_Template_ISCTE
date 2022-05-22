@@ -1,0 +1,255 @@
+\documentclass[12pt,reqno, twoside]{amsbook}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{chngcntr}
+\usepackage{graphicx}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+% you may need to uncomment the command below if you use eps format for figures
+%\usepackage{epstopdf}
+
+
+\makeatletter
+    \def\section{\@startsection{section}{1}%
+      \z@{.5\linespacing\@plus.7\linespacing}{.25\linespacing}%
+      {\normalfont\bfseries\flushleft}}
+    \def\subsection{\@startsection{subsection}{2}%
+      \z@{.5\linespacing\@plus.7\linespacing}{.25\linespacing}%
+      {\normalfont\bfseries\flushleft}}
+
+\makeatother
+\setcounter{MaxMatrixCols}{10}
+
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+\theoremstyle{plain}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}[chapter]
+\newtheorem{axiom}{Axiom}[chapter]
+\newtheorem{case}{Case}[chapter]
+\newtheorem{claim}{Claim}[chapter]
+\newtheorem{conclusion}{Conclusion}[chapter]
+\newtheorem{condition}{Condition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{criterion}{Criterion}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
+\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{notation}{Notation}[chapter]
+\newtheorem{problem}{Problem}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{remark}{Remark}[chapter]
+\newtheorem{solution}{Solution}[chapter]
+\newtheorem{summary}{Summary}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\numberwithin{equation}{chapter}
+
+
+% Please write the references according to your school
+
+\newenvironment{dedication}
+  {%\clearpage           % we want a new page
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   %\clearpage           % finish off the page
+  }
+  \numberwithin{section}{chapter}
+\fancyhead{}
+\fancyfoot{}
+\pagestyle{fancy}
+\fancyfoot[LE,RO]{\thepage}
+
+\makeatletter
+\def\ps@plain{\ps@empty
+ \def\@evenfoot{%
+   \normalfont\scriptsize
+   \rlap{\thepage}\hfil
+   }%
+ \def\@oddfoot{%
+   \normalfont\scriptsize \hfil
+   \llap{\thepage}}%
+}
+\makeatother
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\begin{document}
+\frontmatter
+\addtocontents{toc}{\setcounter{tocdepth}{2}}
+\thispagestyle{empty}
+
+\begin{dedication}%
+
+\begin{flushright}
+\textit{Write here your dedication}
+\end{flushright}%
+\end{dedication}
+
+\setcounter{page}{1}
+\pagenumbering{roman} %
+\chapter*{Acknowledgment}
+
+Write here the acknowledgments and grants, if any
+
+\chapter*{Resumo}
+
+Write here your abstract in Portuguese
+
+\chapter*{Abstract}
+
+Write here your abstract in English
+
+
+\tableofcontents
+
+\mainmatter
+
+\hyphenation{wri-te he-re pro-per hy-phe-ni-za-tion
+}%
+
+\setcounter{page}{1} \pagenumbering{arabic}
+
+\chapter{Introduction}
+\noindent You must use $\backslash$noindent at the beginning of the first paragraph in sections and subsections.
+\section{Major Section}
+\noindent Use Section tag for major section.
+\subsection{This is a subsection}
+\noindent This is a dummy text under a subsection.
+\subsection{This is another subsection}
+\noindent This is a dummy text under a subsection.\par
+This is the second paragraph.
+\section{Another Major Section}
+\newpage
+We add a page brake to show that the even page number appears on the left
+
+\chapter{Literature Review}
+\section{One Section}
+\section{Another Section}
+
+
+\chapter{Mathematics}
+\section{Mathematics and Text}
+\noindent Let $H$ be an Euclidean space, $C$ be a closed bounded convex subset of $H$, ...
+Suppose that as $n\rightarrow\infty$, ....
+.
+\section{Mathematical Formulas}
+\noindent Example of how the number of formulas appears on the right and can be invoked by its label.
+\begin{equation}
+w_{tt}-\Delta w+w^{6}+w\left|  w\right|  ^{p-2}=0\text{ in }\mathbf{R}%
+^{3}\times\left[  0,\infty\right) \label{eqn1}%
+\end{equation}
+
+The equation (\ref{eqn1}) shows that ....
+
+\chapter{Theorem-like Environments}
+\section{Some Examples}
+
+\begin{algorithm}
+This is an algorithm
+\end{algorithm}
+
+\begin{algorithm}
+This is another algorithm
+\end{algorithm}
+
+\begin{conjecture}
+This is a conjecture
+\end{conjecture}
+
+\begin{corollary}
+This is a corollary
+\end{corollary}
+
+\begin{corollary}
+This is another corollary
+\end{corollary}
+
+\begin{corollary}
+One more corollary
+\end{corollary}
+
+\begin{criterion}
+This is a criterion
+\end{criterion}
+
+\begin{definition}
+This is a definition
+\end{definition}
+
+\begin{example}
+This is an example
+\end{example}
+
+\begin{exercise}
+This is an exercise
+\end{exercise}
+
+\begin{lemma}
+This is a lemma
+\end{lemma}
+
+\begin{proof}
+This is the proof of the lemma.
+\end{proof}
+
+\begin{notation}
+This is notation
+\end{notation}
+
+\begin{problem}
+This is a problem
+\end{problem}
+
+\begin{proposition}
+This is a proposition
+\end{proposition}
+
+
+\begin{proof}
+[Proof of the Main Theorem]This is the proof.
+\end{proof}
+\chapter{Conclusions}
+
+\renewcommand{\bibname}{References}
+
+
+\def\bibindent{0.7cm}
+\begin{thebibliography}{99\kern\bibindent}
+\makeatletter
+\let\old@biblabel\@biblabel
+\def\@biblabel#1{\old@biblabel{#1}\kern\bibindent}
+\let\old@bibitem\bibitem
+\def\bibitem#1{\old@bibitem{#1}\leavevmode\kern-\bibindent}
+\makeatother
+\makeatletter
+\renewcommand\@biblabel[1]{}
+\makeatother
+
+%\begin{thebibliography}{99}
+\bibitem{aka73} H. Akaike (1973), \textquotedblleft Information Theory as an
+Extension of the Maximum Likelihood Principle\textquotedblright, in B. N.
+Petrov, and F. Csaki, (Eds.), \textit{Second International Symposium on
+Information Theory}, Akademiai Kiado, Budapest, pp. 267--281.
+
+\bibitem{and10} D.T. Anderson, J.C. Bezdek, M. Popescu, and J.M. Keller
+(2010), \textquotedblleft Comparing Fuzzy, Probabilistic, and Possibilistic
+Partitions\textquotedblright, \textit{IEEE Transactions on Fuzzy Systems},
+18(5), 906--918.
+\end{thebibliography}
+
+\end{document}
